@@ -2,8 +2,6 @@
 
 #Importing modules 
 import random 
-#import enum
-
 
 #Player class
 class player:
@@ -19,16 +17,72 @@ class player:
         
         while playerCredits > 0:
             print("Please enter the numer of the item you want to buy.")
-            playerInput = int(input("Enter number: "))
-            BuyItem(playerInput)
+            try:
+                playerInput = int(input("Enter number: "))
+            except ValueError:
+                print("Enter a numerical value") 
+            player.BuyItem(playerInput)
+
+    def BuyItem(itemId):
+        global items
+        global playerCredits
+        global playerItems
+
+        try:
+            #Check Player has enough credit for item
+            if playerCredits < items[itemId][2]:
+                print("Sorry you do not have enough credits left")
+            else:
+                playerCredits = playerCredits - items[itemId][2]
+                playerItems.append(items[itemId][0])
+                print("You have just bought %s" %items[itemId][1])
+                print("You have %s credits remaining" %playerCredits)
+                print()
+                
+        except IndexError:
+            print("Enter a nubmer between 0 and 5.")
+        
+#AI class
+class ai:
+    def purchaseItems():
+        global aiCredits
+        
+        while aiCredits > 0:
+            ai.BuyItem(random.randint(0,5))
+
+    def BuyItem(itemId):
+        global items
+        global aiCredits
+        global aiItems
+
+        try:
+            #Check Player has enough credit for item
+            if aiCredits < items[itemId][2]:
+                #print("Sorry you do not have enough credits left")
+                pass
+            else:
+                aiCredits = aiCredits - items[itemId][2]
+                aiItems.append(items[itemId][0])
+                #print("You have just bought %s" %items[itemId][1])
+                #print("You have %s credits remaining" %aiCredits)
+                #print()
+                
+        except IndexError:
+            #print("Enter a nubmer between 0 and 5.")
+            pass
+        
 
 #Start up script
 def StartUp():
-    print("Welcome to Glxon Gladiators")
+    global aiCredits
+    global aiItems
+    print("Welcome to Glaxon Gladiators")
     print("You must kit out a battle robot to fight the Glaxon robot")
+    print()
     player.purchaseItems()
-    
-
+    ai.purchaseItems()
+    print(aiCredits)
+    print(aiItems)
 
 #Fucntion which will print out the items in the inventory and format them - WIP
 def ListItems(itemList):
@@ -39,21 +93,7 @@ def ListItems(itemList):
             print(column, end=" ")
         print(end="\n")
 
-#Allows the purchace of items buy passing the id of the item 
-def BuyItem(itemId):
-    global items
-    global playerCredits
-    global playerItems
-        
-    #Check Player has enough credit for item
-    if playerCredits < items[itemId][2]:
-        print("Sorry you do not have enough credits left")
-    else:
-        playerCredits = playerCredits - items[itemId][2]
-        playerItems.append(items[itemId][0])
-        print("You have just bought %s" %items[itemId][1])
-        print("You have %s credits remaining" %playerCredits)
-        print()
+
 
 #Items
 #Name, cost, damage 
