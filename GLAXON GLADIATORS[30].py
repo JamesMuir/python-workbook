@@ -1,27 +1,42 @@
 #Glaxon Gladiators 
+#TODO:
+#Change force field indecator to enum
+#Deal with when there is no weapons left (a draw)
+#High score tables
+#Ai attack
+#Put game in loop
+#
+#
+#
+#
 
 #Importing modules 
 import random 
 
 #Player class
 class player:
-    def purchaseItems():
+    def PurchaseItems():
         global items
         global playerCredits
+        global playerItems
         
         print("Welcome to the Glaxon robot gladiator store. \nYou have %s credits remaining." %playerCredits)  
         print("Here are your options: ")
-        #Prints out the list
+        print()
+        print("ID, Name, Cost, Damage")
         ListItems(items)
         print("Remember each item is one use only")
+        print("Note the force field will not protect againt a nuke only a hydrogen force field will.")
         
         while playerCredits > 0:
-            print("Please enter the numer of the item you want to buy.")
+            print("Please enter the number of the item you want to buy.")
             try:
                 playerInput = int(input("Enter number: "))
             except ValueError:
                 print("Enter a numerical value") 
             player.BuyItem(playerInput)
+
+        #playerItems = playerItems.sort()
 
     def BuyItem(itemId):
         global items
@@ -40,11 +55,47 @@ class player:
                 print()
                 
         except IndexError:
-            print("Enter a nubmer between 0 and 5.")
+            print("Enter a number between 0 and 5.")
+
+    def ListItems(itemList):
+        for i in itemList:
+            print(items[i])
+        
+    def Attack():
+        print("Here are your items: ")
+        player.ListItems(playerItems)
+        print()
+        print("Please select an item to use once you use it it will be removed.")
+        while True:
+            try:
+                userChoice = int(input("Select the ID of the item you want to use: "))
+            except ValueError:
+                print("Enter a numerical value")
+            try:
+                playerItems.remove(userChoice)
+                if userChoice == 0:
+                    aiHealth -= 1
+                elif userChoice == 1:
+                    aiHealth -= 3
+                elif userChoice == 2:
+                    aiHealth -= 7  
+                elif userChoice == 3:
+                    print("Standard force field active")
+                    playerForcefield = 1
+                elif userChoice == 4:
+                    print("Hydrogen force field active")
+                    playerForcefield == 3
+                elif userChoice == 5:
+                   print()
+                break
+            except:
+                print("You do not have that item.")
+                print()
+
         
 #AI class
 class ai:
-    def purchaseItems():
+    def PurchaseItems():
         global aiCredits
         
         while aiCredits > 0:
@@ -68,7 +119,7 @@ class ai:
                 #print()
                 
         except IndexError:
-            #print("Enter a nubmer between 0 and 5.")
+            print("Enter a number between 0 and 5.")
             pass
         
 
@@ -79,10 +130,19 @@ def StartUp():
     print("Welcome to Glaxon Gladiators")
     print("You must kit out a battle robot to fight the Glaxon robot")
     print()
-    player.purchaseItems()
-    ai.purchaseItems()
+    player.PurchaseItems()
+    ai.PurchaseItems()
     print(aiCredits)
     print(aiItems)
+    print()
+    print("Now you will fight...")
+
+    #Game Loop
+    while playerHealth > 0 and aiHealth > 0:
+        player.Attack()
+        ai.Attack()
+        AdvanceRound()
+    
 
 #Fucntion which will print out the items in the inventory and format them - WIP
 def ListItems(itemList):
@@ -93,16 +153,23 @@ def ListItems(itemList):
             print(column, end=" ")
         print(end="\n")
 
-
-
+def AdvanceRound():
+    currentRound += 1
+    print()
+    print("The player has {} health remaining and the Glaxon has {}.").format(playerHealth, aiHealth)
+    print("You have the following items remaining")
+    player.ListItems(playerItems)
+    
+#Variable for repeating
+repeating = True
 #Items
-#Name, cost, damage 
+#ID, Name, cost, damage,     
 items = [
     [0, "Power Punch", 1, 1],
     [1, "Heat Missile", 2, 3],
     [2, "Plasma Punch", 4, 7],
     [3, "Force Field", 2, 10],
-    [4, "Hydrogen Force Field", 3, 20],
+    [4, "Hydrogen Force Field", 3, 0],
     [5, "Nuke", 16, 30]
 ]
 
@@ -110,6 +177,13 @@ playerCredits = 20
 playerItems = []
 aiCredits = 20
 aiItems = []
+playerHealth = 10
+aiHealth = 10
+#0 For none 1 for standard 2 for hydrogen 2 turns left and 3 for hydrogen 1 turn left
+playerForcefield = 0
+aiForcefield = 0
+currentRound = 0
+
 
 #Start of program
 StartUp()
