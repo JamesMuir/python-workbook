@@ -16,7 +16,7 @@ while repeating:
     print("Hello %s %s in 2050 you will be %s." %(firstName, surname, ageIn2050))
 
     while True:
-        userRepeat = input("Do you wat to repeat? \nEnter Y/N: ").lower()
+        userRepeat = input("Do you want to repeat? \nEnter Y/N: ").lower()
         if userRepeat == "y":
             break
         elif userRepeat == "n":
