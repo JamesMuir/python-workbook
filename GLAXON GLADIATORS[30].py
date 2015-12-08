@@ -62,6 +62,9 @@ class player:
             print(items[i])
         
     def Attack():
+        global aiHealth
+        global playerHealth
+        global playerItems
         print("Here are your items: ")
         player.ListItems(playerItems)
         print()
@@ -75,18 +78,23 @@ class player:
                 playerItems.remove(userChoice)
                 if userChoice == 0:
                     aiHealth -= 1
+                    print("Power punch used.")
                 elif userChoice == 1:
                     aiHealth -= 3
+                    print("Heatmissile used.")
                 elif userChoice == 2:
-                    aiHealth -= 7  
+                    aiHealth -= 7
+                    print("Plasma punch used.")
                 elif userChoice == 3:
-                    print("Standard force field active")
                     playerForcefield = 1
+                    print("Standard force field active.")
                 elif userChoice == 4:
-                    print("Hydrogen force field active")
-                    playerForcefield == 3
+                    playerForcefield = 3
+                    print("Hydrogen force field active.")
                 elif userChoice == 5:
-                   print()
+                    aiHealth -= 10
+                    print("Tactical nuke inbound.")
+                print()
                 break
             except:
                 print("You do not have that item.")
@@ -121,8 +129,38 @@ class ai:
         except IndexError:
             print("Enter a number between 0 and 5.")
             pass
-        
 
+    def Attack():
+        global playerHealth
+        global aiItems
+        global aiForcefield
+        while True:
+            randomInt = random.randint(0,5)
+            try:
+                aiItems.remove(randomInt)
+            except:
+                pass
+                if randomInt == 0:
+                    #print("Power punch used.")
+                    playerHealth -= 1
+                elif randomInt == 1:
+                    playerHealth -= 3
+                    #print("Heatmissile used.")
+                elif randomInt == 2:
+                    playerHealth -= 7
+                    #print("Plasma punch used.")
+                elif randomInt == 3:
+                    aiForcefield = 1
+                    #print("Standard force field active.")
+                elif randomInt == 4:
+                    aiForcefield = 3
+                    #print("Hydrogen force field active.")
+                elif randomInt == 5:
+                    playerHealth -= 10
+                    #print("Tactical nuke inbound.")
+                print()
+                break
+            
 #Start up script
 def StartUp():
     global aiCredits
@@ -134,14 +172,22 @@ def StartUp():
     ai.PurchaseItems()
     print(aiCredits)
     print(aiItems)
-    print()
+    print(playerCredits)
+    print(playerItems)
     print("Now you will fight...")
 
     #Game Loop
     while playerHealth > 0 and aiHealth > 0:
         player.Attack()
         ai.Attack()
-        AdvanceRound()
+        if len(playerItems) > 0 and len(playerItems) > 0:
+            #EndGame()
+            break
+        else:
+            AdvanceRound()
+
+    #EndGame()
+            
     
 
 #Fucntion which will print out the items in the inventory and format them - WIP
@@ -159,6 +205,7 @@ def AdvanceRound():
     print("The player has {} health remaining and the Glaxon has {}.").format(playerHealth, aiHealth)
     print("You have the following items remaining")
     player.ListItems(playerItems)
+    print()
     
 #Variable for repeating
 repeating = True
