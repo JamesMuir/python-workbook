@@ -5,7 +5,7 @@
 #High score tables
 #Ai attack
 #Put game in loop
-#
+#Get the force fields to work
 #
 #
 #
@@ -65,10 +65,12 @@ class player:
         global aiHealth
         global playerHealth
         global playerItems
+        
+        print()
         print("Here are your items: ")
         player.ListItems(playerItems)
-        print()
         print("Please select an item to use once you use it it will be removed.")
+        print()
         while True:
             try:
                 userChoice = int(input("Select the ID of the item you want to use: "))
@@ -98,7 +100,9 @@ class player:
                 break
             except:
                 print("You do not have that item.")
-                print()
+                print("")
+
+        return 0
 
         
 #AI class
@@ -117,14 +121,10 @@ class ai:
         try:
             #Check Player has enough credit for item
             if aiCredits < items[itemId][2]:
-                #print("Sorry you do not have enough credits left")
                 pass
             else:
                 aiCredits = aiCredits - items[itemId][2]
                 aiItems.append(items[itemId][0])
-                #print("You have just bought %s" %items[itemId][1])
-                #print("You have %s credits remaining" %aiCredits)
-                #print()
                 
         except IndexError:
             print("Enter a number between 0 and 5.")
@@ -141,30 +141,29 @@ class ai:
             except:
                 pass
                 if randomInt == 0:
-                    #print("Power punch used.")
                     playerHealth -= 1
                 elif randomInt == 1:
                     playerHealth -= 3
-                    #print("Heatmissile used.")
                 elif randomInt == 2:
                     playerHealth -= 7
-                    #print("Plasma punch used.")
                 elif randomInt == 3:
                     aiForcefield = 1
-                    #print("Standard force field active.")
                 elif randomInt == 4:
                     aiForcefield = 3
-                    #print("Hydrogen force field active.")
                 elif randomInt == 5:
                     playerHealth -= 10
-                    #print("Tactical nuke inbound.")
                 print()
                 break
+
+        return 0
             
 #Start up script
 def StartUp():
     global aiCredits
     global aiItems
+    global playerHealth
+    global aiHealth
+    
     print("Welcome to Glaxon Gladiators")
     print("You must kit out a battle robot to fight the Glaxon robot")
     print()
@@ -177,15 +176,23 @@ def StartUp():
     print("Now you will fight...")
 
     #Game Loop
-    while playerHealth > 0 and aiHealth > 0:
+    while True:
         player.Attack()
         ai.Attack()
-        if len(playerItems) > 0 and len(playerItems) > 0:
-            #EndGame()
+        if playerHealth < 0:
+            print("The galxon wins.")
             break
-        else:
-            AdvanceRound()
+        if aiHealth < 0:
+            print("The player wins.")
+            break
+        if len(playerItems) < 0:
+            print("The galxon wins.")
+            break
+        if len(aiItems) < 0:
+            print("The player wins.")
+            break
 
+        AdvanceRound()
     #EndGame()
             
     
@@ -200,9 +207,13 @@ def ListItems(itemList):
         print(end="\n")
 
 def AdvanceRound():
+    global currentRound
+    global playerHealth
+    global aiHealth
+    
     currentRound += 1
     print()
-    print("The player has {} health remaining and the Glaxon has {}.").format(playerHealth, aiHealth)
+    print("The player has {} health remaining and the Glaxon has {}.".format(playerHealth, aiHealth))
     print("You have the following items remaining")
     player.ListItems(playerItems)
     print()
