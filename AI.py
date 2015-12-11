@@ -7,4 +7,6 @@ while repeating:
     if userInput.find("what") >= 0 and userInput.find("date") >= 0:
         print("Current date: {}".format(time.strftime("%d/%m/%Y")))
     if userInput.find("what") >= 0 and userInput.find("time") >= 0:
-        print("Current time is: {}".format(time.strftime("%H:%M:%S")))
+        print("Current time is: {}".format(time.strftime("%H:%M:%S"))
+    if userInput.find("show") >= 0 and userInput.find("calendar")
+    
