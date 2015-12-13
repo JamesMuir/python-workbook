@@ -46,10 +46,6 @@ while repeating:
     logging.write(userInput + "\n")
     logging.close()
 
-    #Gets user information
-    #information = open('information.txt', 'w')
-    
-
     #Array of all possible questions and answers 
     answersAndResponses = [
      [['what', 'date', ''], ['print("Current date: {}".format(time.strftime("%d/%m/%Y")))']],   
