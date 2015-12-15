@@ -192,6 +192,8 @@ def StartUp():
             print("The player wins.")
             break
 
+
+
         AdvanceRound()
     #EndGame()
             
@@ -210,13 +212,31 @@ def AdvanceRound():
     global currentRound
     global playerHealth
     global aiHealth
+    global playerForcefield
+    global aiForcefield
+
     
     currentRound += 1
     print()
     print("The player has {} health remaining and the Glaxon has {}.".format(playerHealth, aiHealth))
+    print()
     print("You have the following items remaining")
     player.ListItems(playerItems)
     print()
+
+    if playerForcefield == 1:
+        playerForcefield = 0
+    elif playerForcefield == 2:
+        playerForcefield = 3
+    elif playerForcefield == 3:
+        playerForcefield = 0
+
+    if aiForcefield == 1:
+        aiForcefield = 0
+    elif aiForcefield == 2:
+        aiForcefield = 3
+    elif aiForcefield == 3:
+        aiForcefield = 0
     
 #Variable for repeating
 repeating = True

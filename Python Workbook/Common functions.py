@@ -6,7 +6,7 @@ def int_input(string):
         except ValueError:
             print("Enter numerical value.")
         except:
-            print("I'm speach less...")
+            print("I'm speechless...")
         
 def float_input(string):
     while True:
@@ -16,5 +16,5 @@ def float_input(string):
         except ValueError:
             print("Enter numerical value.")
         except:
-            print("I'm speach less...")
+            print("I'm speechless...")
         
