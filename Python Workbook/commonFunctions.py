@@ -1,20 +1,21 @@
 def int_input(string):
     while True:
         try:
-            int(input(string))
+            number = int(input(string))
             break
         except ValueError:
             print("Enter numerical value.")
         except:
             print("I'm speechless...")
+    return number
         
 def float_input(string):
     while True:
         try:
-            float(input(string))
+            number = float(input(string))
             break
         except ValueError:
             print("Enter numerical value.")
         except:
             print("I'm speechless...")
-        
+    return number
