@@ -6,6 +6,7 @@ repeating = True
 while repeating:
     gettingData = True
     while gettingData:
+        print()
         radiusOrDiameterKnown = input("Do you know the radius or the diameter? Enter Y/N: ").lower()
         if radiusOrDiameterKnown == "y":
             while True:
