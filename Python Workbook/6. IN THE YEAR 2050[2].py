@@ -7,7 +7,7 @@ while repeating:
     surname = input("Please enter your last name: ")
     while True:
         try:
-            age = int(input("Please enter you age: "))
+            age = int(input("Please enter your age: "))
             break
         except ValueError:
             print("Please enter a numerical number.")

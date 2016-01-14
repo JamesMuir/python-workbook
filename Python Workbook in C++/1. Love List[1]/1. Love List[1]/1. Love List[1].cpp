@@ -1,4 +1,4 @@
-// 1. Love List[1].cpp : Defines the entry point for the console application.
+// 1. LOVE LIST[1].cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -9,6 +9,6 @@ using namespace std;
 int main()
 {
 	cout << "CS:GO \nHockey \nProgramming \nWatching TV";
-    return 0;
+	return 0;
 }
 
