@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	//Array to store the random points
 	int points[5][2];
@@ -53,20 +53,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	do {
 		//Defines the start point 
 		
-		int randomNumber = rand() % 5;
-		startPoint[0] = points[randomNumber][0];
-		startPoint[1] = points[randomNumber][1];
+		int randomNumberOne = rand() % 5;
+		startPoint[0] = points[randomNumberOne][0];
+		startPoint[1] = points[randomNumberOne][1];
 
 		//Defines the end point
-		int endPoint[2];
-		int randomNumber = rand() % 5;
-		endPoint[0] = points[randomNumber][0];
-		endPoint[1] = points[randomNumber][1];
+		int randomNumberTwo = rand() % 5;
+		endPoint[0] = points[randomNumberTwo][0];
+		endPoint[1] = points[randomNumberTwo][1];
 	} while (startPoint[0] == endPoint[0] && startPoint[1] == endPoint[1]);
 
-	cout << endPoint[0] << " " << endPoint[1];
-	cout << startPoint[0] << " " << startPoint[1];
-
+	cout << "Start point: " << startPoint[0] << " " << startPoint[1] << endl;
+	cout << "End point: " << endPoint[0] << " " << endPoint[1] << endl;
+	
+	system("pause");
 	return 0;
 }
 
