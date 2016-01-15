@@ -1,0 +1,12 @@
+﻿Build started 15/01/2016 12:28:42.
+     1>Project "E:\Visual Studio\ComputerSciencePrize20142015\ComputerSciencePrize20142015\ComputerSciencePrize20142015.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ComputerSciencePrize20142015.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ComputerSciencePrize20142015.cpp
+         ComputerSciencePrize20142015.cpp
+     1>e:\visual studio\computerscienceprize20142015\computerscienceprize20142015\computerscienceprize20142015.cpp(62): error C2374: 'randomNumber' : redefinition; multiple initialization
+                 e:\visual studio\computerscienceprize20142015\computerscienceprize20142015\computerscienceprize20142015.cpp(56) : see declaration of 'randomNumber'
+     1>Done Building Project "E:\Visual Studio\ComputerSciencePrize20142015\ComputerSciencePrize20142015\ComputerSciencePrize20142015.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.34
