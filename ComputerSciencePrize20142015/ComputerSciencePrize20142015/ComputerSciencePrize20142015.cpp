@@ -63,6 +63,10 @@ int main()
 		endPoint[1] = points[randomNumberTwo][1];
 	} while (startPoint[0] == endPoint[0] && startPoint[1] == endPoint[1]);
 
+	//Creates a list of points that need or needed to be traveled too
+
+	//Creates a list of points needed to be traveled two still
+
 	cout << "Start point: " << startPoint[0] << " " << startPoint[1] << endl;
 	cout << "End point: " << endPoint[0] << " " << endPoint[1] << endl;
 	
@@ -70,3 +74,4 @@ int main()
 	return 0;
 }
 
+// Works out the distance between two points 
