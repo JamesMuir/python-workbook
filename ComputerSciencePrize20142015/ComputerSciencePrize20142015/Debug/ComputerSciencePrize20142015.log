@@ -1,2 +1,5 @@
 ﻿  ComputerSciencePrize20142015.cpp
+f:\github\python-workbook\computerscienceprize20142015\computerscienceprize20142015\computerscienceprize20142015.cpp(80): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\github\python-workbook\computerscienceprize20142015\computerscienceprize20142015\computerscienceprize20142015.cpp(81): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\github\python-workbook\computerscienceprize20142015\computerscienceprize20142015\computerscienceprize20142015.cpp(85): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   ComputerSciencePrize20142015.vcxproj -> F:\Github\python-workbook\ComputerSciencePrize20142015\Debug\ComputerSciencePrize20142015.exe

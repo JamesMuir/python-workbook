@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>
+#include<cmath>
 
 using namespace std;
 
@@ -75,3 +76,11 @@ int main()
 }
 
 // Works out the distance between two points 
+int distance(int pointOne[2], int pointTwo[2]) {
+	double lengthOne = pow((pointOne[0] - pointTwo[0]),2);
+	double lengthTwo = pow((pointOne[1] - pointTwo[1]),2);
+
+	double lengthThree = sqrt(lengthOne + lengthTwo);
+
+	return lengthThree;
+}
