@@ -48,3 +48,16 @@ while repeating:
 
         if answerThree == "sailfish":
             numberRight += 1
+
+    print("You got {} correct.".format(numberRight))
+    
+    while True:
+        userRepeat = input("\nDo you want to repeat? \nEnter Y/N: ").lower()
+        if userRepeat == "y":
+            print()
+            break
+        elif userRepeat == "n":
+            repeating = False
+            break
+        else:
+            print("Enter valid input.")
