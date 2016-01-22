@@ -66,10 +66,10 @@ int main()
 
 
 	// Creates a list of points that need or needed to be traveled too
-	int pointsToTravelTo[5][2];
+	//int pointsToTravelTo[5][2];
 
 	// Creates a list of points needed to be traveled two still
-	int pointsStillToTravelTo[5][2];
+	//int pointsStillToTravelTo[5][2];
 
 	// Defines last point 
 	int lastPoint[2];
@@ -77,11 +77,9 @@ int main()
 	lastPoint[0] = startPoint[0];
 	lastPoint[1] = startPoint[1];
 
-	// Keeps looping until all possibilities have been tried 
-	while (true) {
+	//Trys to work out the distance of all posabilities 
 
 
-	}
 	//cout << "Start point: " << startPoint[0] << " " << startPoint[1] << endl;
 	//cout << "End point: " << endPoint[0] << " " << endPoint[1] << endl;
 
