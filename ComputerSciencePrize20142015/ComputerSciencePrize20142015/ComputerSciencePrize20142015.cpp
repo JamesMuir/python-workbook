@@ -64,7 +64,7 @@ int main()
 		endPoint[1] = points[randomNumberTwo][1];
 	} while (startPoint[0] == endPoint[0] && startPoint[1] == endPoint[1]);
 
-	
+
 	// Creates a list of points that need or needed to be traveled too
 	int pointsToTravelTo[5][2];
 
@@ -73,6 +73,9 @@ int main()
 
 	// Defines last point 
 	int lastPoint[2];
+
+	lastPoint[0] = startPoint[0];
+	lastPoint[1] = startPoint[1];
 
 	// Keeps looping until all possibilities have been tried 
 	while (true) {
