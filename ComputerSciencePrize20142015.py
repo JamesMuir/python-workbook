@@ -54,13 +54,33 @@ routeTwo += getDistance(points[0], endingPoint)
 print(routeTwo)
 
 routeThree = 0
-routeThree += getDistance(startingPoint, points[1])
-routeThree += getDistance(points[1], points[2])
+routeThree += getDistance(startingPoint, points[2])
 routeThree += getDistance(points[2], points[0])
-routeThree += getDistance(points[0], endingPoint)
+routeThree += getDistance(points[0], points[1])
+routeThree += getDistance(points[1], endingPoint)
 
 print(routeThree)
 
+routeFour = 0
+routeFour += getDistance(startingPoint, points[0])
+routeFour += getDistance(points[0], points[2])
+routeFour += getDistance(points[2], points[1])
+routeFour += getDistance(points[1], endingPoint)
 
+print(routeFour)
 
+routeFive = 0
+routeFive += getDistance(startingPoint, points[1])
+routeFive += getDistance(points[1], points[0])
+routeFive += getDistance(points[0], points[1])
+routeFive += getDistance(points[1], endingPoint)
 
+print(routeFive)
+
+routeSix = 0
+routeSix += getDistance(startingPoint, points[2])
+routeSix += getDistance(points[2], points[1])
+routeSix += getDistance(points[1], points[0])
+routeSix += getDistance(points[0], endingPoint)
+
+print(routeSix)
