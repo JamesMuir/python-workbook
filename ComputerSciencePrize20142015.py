@@ -37,11 +37,14 @@ points.remove(startingPoint)
 endingPoint = points[random.randint(0,3)]
 points.remove(endingPoint)
 
+routes = []
+
 routeOne = 0
 routeOne += getDistance(startingPoint, points[0])
 routeOne += getDistance(points[0], points[1])
 routeOne += getDistance(points[1], points[2])
 routeOne += getDistance(points[2], endingPoint)
+routes += [["RouteOne", routeOne, startingPoint, points[0], points[1], points[2], endingPoint]]
 
 print(routeOne)
 
