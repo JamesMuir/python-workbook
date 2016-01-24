@@ -66,7 +66,7 @@ int main()
 
 
 	// Creates a list of points that need or needed to be traveled too
-	//int pointsToTravelTo[5][2];
+	int pointsToTravelTo[5][2];
 
 	// Creates a list of points needed to be traveled two still
 	//int pointsStillToTravelTo[5][2];
