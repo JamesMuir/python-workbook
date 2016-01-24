@@ -44,46 +44,48 @@ routeOne += getDistance(startingPoint, points[0])
 routeOne += getDistance(points[0], points[1])
 routeOne += getDistance(points[1], points[2])
 routeOne += getDistance(points[2], endingPoint)
-routes += [["RouteOne", routeOne, startingPoint, points[0], points[1], points[2], endingPoint]]
+routes += [["Route One", routeOne, startingPoint, points[0], points[1], points[2], endingPoint]]
 
-print(routeOne)
 
 routeTwo = 0
 routeTwo += getDistance(startingPoint, points[1])
 routeTwo += getDistance(points[1], points[2])
 routeTwo += getDistance(points[2], points[0])
 routeTwo += getDistance(points[0], endingPoint)
+routes += [["Route Two", routeTwo, startingPoint, points[1], points[2], points[0], endingPoint]]
 
-print(routeTwo)
 
 routeThree = 0
 routeThree += getDistance(startingPoint, points[2])
 routeThree += getDistance(points[2], points[0])
 routeThree += getDistance(points[0], points[1])
 routeThree += getDistance(points[1], endingPoint)
+routes += [["Route Three", routeThree, startingPoint, points[2], points[0], points[1], endingPoint]]
 
-print(routeThree)
 
 routeFour = 0
 routeFour += getDistance(startingPoint, points[0])
 routeFour += getDistance(points[0], points[2])
 routeFour += getDistance(points[2], points[1])
 routeFour += getDistance(points[1], endingPoint)
+routes += [["Route Four", routeFour, startingPoint, points[0], points[2], points[1], endingPoint]]
 
-print(routeFour)
 
 routeFive = 0
 routeFive += getDistance(startingPoint, points[1])
 routeFive += getDistance(points[1], points[0])
-routeFive += getDistance(points[0], points[1])
-routeFive += getDistance(points[1], endingPoint)
+routeFive += getDistance(points[0], points[2])
+routeFive += getDistance(points[2], endingPoint)
+routes += [["Route Five", routeFive, startingPoint, points[1], points[0], points[2], endingPoint]]
 
-print(routeFive)
 
 routeSix = 0
 routeSix += getDistance(startingPoint, points[2])
 routeSix += getDistance(points[2], points[1])
 routeSix += getDistance(points[1], points[0])
 routeSix += getDistance(points[0], endingPoint)
+routes += [["Route Six", routeSix, startingPoint, points[2], points[1], points[0], endingPoint]]
 
-print(routeSix)
+routesSorted = sorted(routes,key=lambda l:l[1])
+
+print(routesSorted[0])
