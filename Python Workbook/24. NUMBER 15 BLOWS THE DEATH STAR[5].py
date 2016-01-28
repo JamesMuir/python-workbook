@@ -2,9 +2,43 @@
 from commonFunctions import *
 
 repeating = True
+missileTarget = 15
 while repeating:
     gettingData = True
     while gettingData:
         while True:
-            attempts = int_input("Please enter a number between 1 and six of attempts you want: ")
-            if attempts >= 0 and attempts <= 6
+            attempts = int_input("Please enter a number between one and six of attempts you want: ")
+            if attempts >= 1 and attempts <= 6:
+                break
+            
+        print("You selected {} attempts.".format(attempts))
+        while True:
+            isInformationCorrect = input("Is the above information correct. Enter Y/N: ").lower()
+            if isInformationCorrect == "y":
+                gettingData = False
+                break
+            elif isInformationCorrect == "n":
+                break
+            else:
+                print("Enter Y/N.")
+                print()
+                    
+    for i in range(attempts):
+        while True:
+            guess = input("Please enter a number between one and twenty to blow up the death star: ")
+            if guess >= 1 and guess == 50:
+                break
+        if guess == missileTarget:
+            
+        
+            
+    print()
+    while True:
+        userRepeat = input("Do you want to repeat? \nEnter Y/N: ").lower()
+        if userRepeat == "y":
+            break
+        elif userRepeat == "n":
+            repeating = False
+            break
+        else:
+            print("Enter valid input.")
