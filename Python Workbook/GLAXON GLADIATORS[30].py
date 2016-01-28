@@ -78,24 +78,26 @@ class player:
                 print("Enter a numerical value")
             try:
                 playerItems.remove(userChoice)
-                if userChoice == 0:
-                    aiHealth -= 1
-                    print("Power punch used.")
-                elif userChoice == 1:
-                    aiHealth -= 3
-                    print("Heatmissile used.")
-                elif userChoice == 2:
-                    aiHealth -= 7
-                    print("Plasma punch used.")
-                elif userChoice == 3:
-                    playerForcefield = 1
-                    print("Standard force field active.")
-                elif userChoice == 4:
-                    playerForcefield = 3
-                    print("Hydrogen force field active.")
-                elif userChoice == 5:
-                    aiHealth -= 10
-                    print("Tactical nuke inbound.")
+                if aiForcefield != 0:
+                    if userChoice == 0:
+                        aiHealth -= 1
+                        print("Power punch used.")
+                    elif userChoice == 1:
+                        aiHealth -= 3
+                        print("Heatmissile used.")
+                    elif userChoice == 2:
+                        aiHealth -= 7
+                        print("Plasma punch used.")
+                    elif userChoice == 3:
+                        playerForcefield = 1
+                        print("Standard force field active.")
+                    elif userChoice == 4:
+                        playerForcefield = 3
+                        print("Hydrogen force field active.")
+                    elif userChoice == 5:
+                        if aiForcefield != 2 or  aiForcefield != 3: 
+                            aiHealth -= 10
+                        print("Tactical nuke inbound.")
                 print()
                 break
             except:
@@ -185,10 +187,10 @@ def StartUp():
         if aiHealth < 0:
             print("The player wins.")
             break
-        if len(playerItems) < 0:
+        if len(playerItems) <= 0:
             print("The galxon wins.")
             break
-        if len(aiItems) < 0:
+        if len(aiItems) <= 0:
             print("The player wins.")
             break
 
