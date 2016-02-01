@@ -3,10 +3,8 @@
 #Change force field indecator to enum
 #Deal with when there is no weapons left (a draw)
 #High score tables
-#Ai attack
 #Put game in loop
-#Get the force fields to work
-#
+#Make it pretty 
 #
 #
 
@@ -63,6 +61,7 @@ class player:
         
     def Attack():
         global aiHealth
+        global aiForcefield
         global playerHealth
         global playerItems
         
@@ -78,7 +77,7 @@ class player:
                 print("Enter a numerical value")
             try:
                 playerItems.remove(userChoice)
-                if aiForcefield != 0:
+                if aiForcefield == 0:
                     if userChoice == 0:
                         aiHealth -= 1
                         print("Power punch used.")
@@ -94,9 +93,9 @@ class player:
                     elif userChoice == 4:
                         playerForcefield = 3
                         print("Hydrogen force field active.")
-                    elif userChoice == 5:
-                        if aiForcefield != 2 or  aiForcefield != 3: 
-                            aiHealth -= 10
+                if userChoice == 5:
+                    if aiForcefield == 0 or aiForcefield == 1: 
+                        aiHealth -= 10
                         print("Tactical nuke inbound.")
                 print()
                 break
@@ -134,30 +133,32 @@ class ai:
 
     def Attack():
         global playerHealth
+        global playerForcefield
         global aiItems
         global aiForcefield
         while True:
             randomInt = random.randint(0,5)
             try:
                 aiItems.remove(randomInt)
+                if playerForcefield == 0:
+                    if randomInt == 0:
+                        playerHealth -= 1
+                    elif randomInt == 1:
+                        playerHealth -= 3
+                    elif randomInt == 2:
+                        playerHealth -= 7
+                    elif randomInt == 3:
+                        aiForcefield = 1
+                    elif randomInt == 4:
+                        aiForcefield = 3
+                        
+                if randomInt == 5:
+                    if playerForcefield == 0 or playerForcefield == 1:
+                        playerHealth -= 10
+                break
             except:
                 pass
-                if randomInt == 0:
-                    playerHealth -= 1
-                elif randomInt == 1:
-                    playerHealth -= 3
-                elif randomInt == 2:
-                    playerHealth -= 7
-                elif randomInt == 3:
-                    aiForcefield = 1
-                elif randomInt == 4:
-                    aiForcefield = 3
-                elif randomInt == 5:
-                    playerHealth -= 10
-                print()
-                break
 
-        return 0
             
 #Start up script
 def StartUp():
@@ -259,7 +260,7 @@ aiCredits = 20
 aiItems = []
 playerHealth = 10
 aiHealth = 10
-#0 For none 1 for standard 2 for hydrogen 2 turns left and 3 for hydrogen 1 turn left
+#0 for none, 1 for standard, 2 for hydrogen 2 turns left and 3 for hydrogen 1 turn left
 playerForcefield = 0
 aiForcefield = 0
 currentRound = 0

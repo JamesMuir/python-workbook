@@ -1,8 +1,9 @@
 #NUMBER 15 BLOWS THE DEATH STAR[5]
-from commonFunctions import *
+from commonFunctions import int_input
+
+missileTarget = 15
 
 repeating = True
-missileTarget = 15
 while repeating:
     gettingData = True
     while gettingData:
@@ -25,11 +26,14 @@ while repeating:
                     
     for i in range(attempts):
         while True:
-            guess = input("Please enter a number between one and twenty to blow up the death star: ")
-            if guess >= 1 and guess == 50:
+            guess = int_input("Please enter a number between one and twenty to blow up the death star: ")
+            if guess >= 1 and guess <= 50:
                 break
         if guess == missileTarget:
-            
+            print("Well done you hit it.")
+            break
+        else:
+            print("Missed")
         
             
     print()
