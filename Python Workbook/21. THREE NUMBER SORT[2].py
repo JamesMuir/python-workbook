@@ -3,9 +3,9 @@ from commonFunctions import *
 
 repeating = True
 while repeating:
-    numbers = [0,0,0]
+    numbers = []
     for i in range(3):
-        numbers[i] = int_input("Please enter number {}: ".format(i))
+        numbers.append(int_input("Please enter number {}: ".format(i+1)))
 
     numbers.sort()
 
