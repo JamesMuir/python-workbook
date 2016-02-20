@@ -33,12 +33,10 @@ while repeating:
                 elif isCorrect == "n":
                     break
         
-    
     while True:
         lottery = []
         for i in range(3):
             lottery.append(randint(1,10))
-
         if lottery[0] in lottery[1:]:
             pass
         elif lottery[1] == lottery[0] or lottery[1] == lottery[2]:
@@ -48,5 +46,22 @@ while repeating:
         else:
             break
 
-    print(numbers)
-    print(lottery)
+    if numbers == lottery:
+        print("Well done you won the lottery.")
+        print(numbers)
+        print(lottery)
+    else:
+        print("Sorry you lost.")
+        print(numbers)
+        print(lottery)
+
+    print()
+    while True:
+        userRepeat = input("Do you want to repeat? \nEnter Y/N: ").lower()
+        if userRepeat == "y":
+            break
+        elif userRepeat == "n":
+            repeating = False
+            break
+        else:
+            print("Enter valid input.")
