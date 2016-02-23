@@ -5,11 +5,15 @@ while repeating:
     while gettingData:
         print("Do you want to go to one or two million?")
         oneOrTwo = input("Please enter 1 or 2: ").lower()
-        if onOrTwo == "1" or onOrTwo = "one":
-            upTo = 1000000
-        elif onOrTwo == "2" or onOrTwo = "two":
-            upTo = 2000000
-                    
+        if oneOrTwo == "1" or oneOrTwo == "one":
+            upTo = 1000001
+        elif oneOrTwo == "2" or oneOrTwo == "two":
+            upTo = 2000001
+
+
+        for i in range(upTo):
+            print(i)
+        
     print()
     while True:
         userRepeat = input("Do you want to repeat? \nEnter Y/N: ").lower()
