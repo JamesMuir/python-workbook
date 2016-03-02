@@ -18,5 +18,18 @@ while repeating:
         else:
             print("In what world is {} between 1 and 100?".format(userNumber))
 
-    for i in range(5):
-                
+    lowValue = 1
+    maxValue = 100
+    for i in range(50):
+        guess = randint(lowValue, maxValue)
+        while True:
+            print("Is your guess higher or lower than {} or is it correct.".format(guess))
+            isHigherOrLower = input("Enter H/L/C: ").lower()
+            if isHigherOrLower == "h":
+                lowValue = guess
+                break
+            elif isHigherOrLower == "l":
+                maxValue = guess
+                break
+            elif isHigherOrLower == "c":
+                print("The computer correctly guess")
