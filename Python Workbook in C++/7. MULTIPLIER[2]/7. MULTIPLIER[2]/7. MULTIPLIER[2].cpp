@@ -13,7 +13,7 @@ int main()
 {
 	bool repeating = true;
 	int variableOne, variableTwo;
-	string dataRight;
+	string dataRight, addOrMultiply, userRepeat;
 
 	while (repeating){
 		// Start of getting data
@@ -55,9 +55,27 @@ int main()
 				}
 			} while (!twoValid);
 						
+			bool threeValid = false;
+			do
+			{
+				cout << "Do you want to add or multiply?" << endl << "Enter A/M: ";
+				cin >> addOrMultiply;
+
+				if (addOrMultiply == "a" || addOrMultiply == "A"){
+					addOrMultiply = "add";
+					threeValid = true;
+				}
+				else if (addOrMultiply == "m" || addOrMultiply == "M"){
+					addOrMultiply = "multiply";
+					threeValid = true;
+				}
+
+			} while (!threeValid);
+
 			cout << "You entered the following numbers: " << variableOne << ", " << variableOne << endl;
+			cout << "You selected to " << addOrMultiply << endl;
 			while (true){
-				cout << "Is the above right?" << endl << "Enter Y/N";
+				cout << "Is the above right?" << endl << "Enter Y/N: ";
 				cin >> dataRight;
 
 				if (dataRight == "y"){
@@ -67,16 +85,36 @@ int main()
 				else if (dataRight == "n"){
 					break;
 				}
-				else {
-					cout << "Enter Y/N" << endl;
-				}
 			}
 		}
 		// End of getting data
 
-		// Start of multiplying 
+		// Start of adding or multiplying 
+		if (addOrMultiply == "add"){
+			cout << variableOne << " + " << variableTwo << " = " << variableOne + variableTwo << endl;
+		}
+		else if (addOrMultiply == "multiply"){
+			cout << variableOne << " * " << variableTwo << " = " << variableOne * variableTwo << endl;
+		}
+		// End of adding or multiplying 
 
-		// End of multiplying 
+		// Allows the user to quit
+		while (true) {
+			cout << "Do you want to repeat." << endl << "Enter Y/N: ";
+			cin >> userRepeat;
+
+			if ((userRepeat == "y") || (userRepeat == "Y")) {
+				break;
+			}
+			else if ((userRepeat == "n") || (userRepeat == "y")) {
+				repeating = false;
+				break;
+			}
+			else {
+				cout << "Enter a valid input." << endl << endl;
+			}
+		}
+
 	}
 
 	return 0;
