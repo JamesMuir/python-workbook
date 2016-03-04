@@ -1,5 +1,5 @@
 #IN THE YEAR 2050[2]
-import datetime
+from datetime import date
 repeating = True
 
 while repeating:
@@ -12,7 +12,7 @@ while repeating:
         except ValueError:
             print("Please enter a numerical number.")
 
-    ageIn2050 = 2050 - datetime.date.today().year + age
+    ageIn2050 = 2050 - date.today().year + age
     print("Hello %s %s in 2050 you will be %s." %(firstName, surname, ageIn2050))
 
     while True:

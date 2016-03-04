@@ -3,16 +3,24 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
+	string userRepeat;
+	
+
 	bool repeating = true;
 	while (repeating){
 		bool numberValid = false;
 		int numbers[5] = { 0, 0, 0, 0, 0 };
 		int counter = 0;
+		int total = 0;
+		float average = 0; 
+		float weirdNumber = 0;
+
 		while (counter < 5){
 			bool numberValid = false;
 			do
@@ -33,9 +41,32 @@ int main()
 				}
 			} while (!numberValid);
 		}
-		
+
 		for (int i = 0; i < 5; i++){
-			cout << numbers[i] << endl;
+			total += numbers[i];
+		}
+
+		average = total / 5.0;
+		cout << "The average is " << average << endl;
+
+		weirdNumber = numbers[0] * numbers[1] - numbers[3];
+		cout << "The sum of the first two numbers minus the third is " << weirdNumber << endl; 
+
+		// Allows the user to quit
+		while (true) {
+			cout << "Do you want to repeat." << endl << "Enter Y/N: ";
+			cin >> userRepeat;
+
+			if ((userRepeat == "y") || (userRepeat == "Y")) {
+				break;
+			}
+			else if ((userRepeat == "n") || (userRepeat == "y")) {
+				repeating = false;
+				break;
+			}
+			else {
+				cout << "Enter a valid input." << endl << endl;
+			}
 		}
 	}
 

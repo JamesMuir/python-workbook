@@ -1,5 +1,5 @@
 #CANNIBAL PROGRAM[1]
-import random
+from random import randint
 
 repeating = True
 responses = ["Hello, {} people with {} hair and {} eyes are very tasty in the cooking pot!",
@@ -12,7 +12,7 @@ while repeating:
     hairColour = input("Please enter your hair colour: ")
     eyeColour = input("Please enter your eye colour: ")
 
-    randomResponseNumber = random.randint(0, len(responses)-1)
+    randomResponseNumber = randint(0, len(responses)-1)
     
     print(responses[randomResponseNumber].format(userName, hairColour, eyeColour))
 
