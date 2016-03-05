@@ -20,16 +20,32 @@ while repeating:
 
     lowValue = 1
     maxValue = 100
-    for i in range(50):
+
+    guessing = 0 
+    while guessing < 6:
         guess = randint(lowValue, maxValue)
         while True:
             print("Is your guess higher or lower than {} or is it correct.".format(guess))
             isHigherOrLower = input("Enter H/L/C: ").lower()
             if isHigherOrLower == "h":
                 lowValue = guess
+                guessing += 1
                 break
             elif isHigherOrLower == "l":
                 maxValue = guess
+                guessing += 1
                 break
             elif isHigherOrLower == "c":
                 print("The computer correctly guess")
+                guessing = 7
+                
+    print()
+    while True:
+        userRepeat = input("Do you want to repeat? \nEnter Y/N: ").lower()
+        if userRepeat == "y":
+            break
+        elif userRepeat == "n":
+            repeating = False
+            break
+        else:
+            print("Enter valid input.")
