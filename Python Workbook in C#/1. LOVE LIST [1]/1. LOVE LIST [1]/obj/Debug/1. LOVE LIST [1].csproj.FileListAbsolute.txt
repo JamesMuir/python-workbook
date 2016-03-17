@@ -1,0 +1,6 @@
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\bin\Debug\_1.LOVE_LIST__1_.exe.config
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\bin\Debug\_1.LOVE_LIST__1_.exe
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\bin\Debug\_1.LOVE_LIST__1_.pdb
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\obj\Debug\1. LOVE LIST [1].csprojResolveAssemblyReference.cache
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\obj\Debug\_1.LOVE_LIST__1_.exe
+E:\python-workbook-master\Python Workbook in C#\1. LOVE LIST [1]\1. LOVE LIST [1]\obj\Debug\_1.LOVE_LIST__1_.pdb

@@ -1,0 +1,5 @@
+E:\python-workbook-master\Python Workbook in C#\3. IRRATATING PARROT [1]\3. IRRATATING PARROT [1]\bin\Debug\_3.IRRATATING_PARROT__1_.exe.config
+E:\python-workbook-master\Python Workbook in C#\3. IRRATATING PARROT [1]\3. IRRATATING PARROT [1]\bin\Debug\_3.IRRATATING_PARROT__1_.exe
+E:\python-workbook-master\Python Workbook in C#\3. IRRATATING PARROT [1]\3. IRRATATING PARROT [1]\bin\Debug\_3.IRRATATING_PARROT__1_.pdb
+E:\python-workbook-master\Python Workbook in C#\3. IRRATATING PARROT [1]\3. IRRATATING PARROT [1]\obj\Debug\_3.IRRATATING_PARROT__1_.exe
+E:\python-workbook-master\Python Workbook in C#\3. IRRATATING PARROT [1]\3. IRRATATING PARROT [1]\obj\Debug\_3.IRRATATING_PARROT__1_.pdb

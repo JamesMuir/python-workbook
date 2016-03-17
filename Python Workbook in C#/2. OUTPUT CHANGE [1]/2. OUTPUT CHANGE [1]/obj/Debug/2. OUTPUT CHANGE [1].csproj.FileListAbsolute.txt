@@ -1,0 +1,6 @@
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\bin\Debug\_2.OUTPUT_CHANGE__1_.exe.config
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\bin\Debug\_2.OUTPUT_CHANGE__1_.exe
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\bin\Debug\_2.OUTPUT_CHANGE__1_.pdb
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\obj\Debug\2. OUTPUT CHANGE [1].csprojResolveAssemblyReference.cache
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\obj\Debug\_2.OUTPUT_CHANGE__1_.exe
+E:\python-workbook-master\Python Workbook in C#\2. OUTPUT CHANGE [1]\2. OUTPUT CHANGE [1]\obj\Debug\_2.OUTPUT_CHANGE__1_.pdb
