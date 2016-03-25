@@ -15,7 +15,7 @@ def read():
         return namesList
     
     else:
-        return [""]
+        return []
     
 repeating = True
 while repeating:
